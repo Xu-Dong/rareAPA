@@ -6,7 +6,7 @@ if (length(args) != 2) {
   quit(status=2)
 }
 
-dir = "/lustre/home/xdzou/2021-01-01-RareVar-aQTL-Project/2021-07-28-call-outliers-onlyEA/"
+dir = getwd()# current path
 
 # Load libraries
 library(data.table)
@@ -51,12 +51,6 @@ pick_outliers_v2 <- function(medz,threshold){
 			  medZ=medz[outlier_idx]))
 }
 
-# For each gene we took the maximal zscore among individuals for further outlier test, this can be used for further disease gene enrichment
-# here we don't specify threshold, since we will output all tested genes and their maximal zscores
-pick_outliers_v3 <- function(medz,inds){
-	outlier_idx = as.numeric(apply(abs(medz), 1, which.max))
-	return(data.frame(INDS=factor(inds[outlier_idx], levels = inds),medZ=medz[cbind(1:nrow(medz), outlier_idx)]))
-}
 
 count_exp_gene <- function(x){
 	return(length(x) - sum(is.na(x)))
@@ -64,12 +58,11 @@ count_exp_gene <- function(x){
 ############ MAIN
 
 input_file <- args[1]
-mol_type <- args[2] # apa/expression
 ###
 ### Loading data
 ###
 ## Load flat file with filtered and normalized expression data
-data = fread(paste(dir, 'output/',input_file, sep = ''), header = T) # apa
+data = fread(paste(dir, 'example_data/',input_file, sep = ''), header = T)
 
 setkey(data, Gene)
 
@@ -88,8 +81,8 @@ results.f <- results %>% dplyr::filter(n.tissues>=tissue_threshold)
 ## Unmelt results to yield data frames of tissue counts, meta Z scores, and p-values for Stouffer's method
 counts = dcast(data = results, Gene ~ sample, value.var = 'n.tissues')
 
-# write counts
-write.table(counts,file=paste(dir,"output/",mol_type,"/medz_all/",mol_type,"_medz.counts.txt",sep=""),quote=F,row.names=F,sep="\t") 
+# write counts matrix to a file
+write.table(counts,file=paste(dir,"/","apa_medz.counts.txt",sep=""),quote=F,row.names=F,sep="\t") 
 rownames(counts) = counts$Gene
 counts = counts[, -1]
 counts = counts[, individs]
@@ -97,8 +90,8 @@ counts = counts[, individs]
 # use the filtered results.f to generate a data.frame for further outlier test
 medz = dcast(data = results.f, Gene ~ sample, value.var = 'median.z')
 
-# write medz
-write.table(medz,file=paste(dir,"output/",mol_type,"/medz_all/medz_of_all_gene.",mol_type,".txt",sep=""),quote=F,row.names=F,sep="\t")
+# write median z matrix to a file
+write.table(medz,file=paste(dir,"/","medz_of_all_gene.apa.txt",sep=""),quote=F,row.names=F,sep="\t")
 rownames(medz) <- medz$Gene
 medz <- medz[,-1]
 
@@ -106,15 +99,9 @@ medz <- medz[,-1]
 Z_threshold = 3
 outlier_picked = pick_outliers_v2(medz, Z_threshold)# medZ >3
 
-# pick extreme zscore for each gene
-indis = names(medz)
-zscore_extreme = pick_outliers_v3(medz,indis)
-zscore_extreme$GENE <- rownames(medz)
-zscore_extreme <- zscore_extreme[,c(3,1,2)]
 
 # write output
-output_name = paste(dir,"output/",mol_type,"/medz_all/",mol_type,"_medz.picked.Z_",Z_threshold,".txt",sep="")
+output_name = paste(dir,"/","apa_medz.picked.Z_",Z_threshold,".txt",sep="")
 write.table(outlier_picked,file=output_name,quote=F,row.names=F,sep="\t")
 
-#write.table(zscore_extreme,file=paste(dir,"output/",mol_type,"/medz/extreme_medz.no_filtered.",mol_type,".txt",sep=""),quote=F,row.names=F,sep="\t")
 
