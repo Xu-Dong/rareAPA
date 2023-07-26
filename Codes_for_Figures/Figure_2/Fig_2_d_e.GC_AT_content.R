@@ -6,7 +6,7 @@ library(magrittr)
 
 gc_dat <- fread("data/02.GC_content.txt",header=T,sep = "\t")
 aoutlier_dat <- fread("data/apa_medz.picked.Z_3.rm_global_and_chrX.add_tissueCount.txt",header=T,sep = "\t")
-eoutlier_dat <- fread("src/eoutliers_medz.picked.Z_3.txt",header=T,sep = "\t")
+eoutlier_dat <- fread("src/eoutliers_medz.picked.Z_3.txt",header=T,sep = "\t") # multi-tissue eOutliers
 id_con <- fread("src/gencode.v26.geneid_to_genename.txt",header=F,sep = "\t")
 
 aoutlier_dat$ID <-lapply(aoutlier_dat$GENE, function(x){strsplit(x,split="|",fixed=T)[[1]][1]})
