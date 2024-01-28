@@ -1,0 +1,11 @@
+import.R:
+require(data.table)
+library(hash,lib.loc="/lustre/home/wychen/anaconda3/envs/r4/lib/R/library/")
+table <- read.table("/lustre/home/wychen/data/ref/GRCh38/hg38.chrom.sizes.txt", stringsAsFactors = FALSE) #edit by CWY
+microArray_alnTable_file <- "/lustre/home/wychen/2021-09-06-eRNA-QTL/HeRA/output/step9-coloc_eeQTL/eQTL/GTEx_Analysis_v7_eQTL/all.hg38.microArray.bed"    #edit by CWY
+transcripts_file="/lustre/home/wychen/2021-09-06-eRNA-QTL/HeRA/output/step9-coloc_eeQTL/eQTL/GTEx_Analysis_v7_eQTL/all.hg38.annotation.bed"
+
+make_gene_trait_tables.R
+range <- 1e5
+range_gene <-1e5
+microArray_alnTable_file <- "/lustre/home/wychen/2021-09-06-eRNA-QTL/HeRA/output/step9-coloc_eeQTL/eQTL/GTEx_Analysis_v7_eQTL/all.hg38.microArray.bed"    #edit by CWY
