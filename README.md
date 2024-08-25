@@ -13,4 +13,21 @@ Although rare non-coding variants (RVs) play crucial roles in human complex trai
 This repository contains codes for data analyses in above rare APA manuscript. Most of the codes are built by R or Python (version Python3) or Shell and all request packages can be found within the codes. Scripts for analyses, including aOutlier calling, rare variants enrichment, RNA Binding Protein (RBP) motif enrichment, colocalization with GWAS summary, and aWatershed, can be found in the [Scripts](https://github.com/Xu-Dong/rareAPA/tree/main/scripts) directory.
 
 # Setting up the environment
+
+* R (version > 3.6)
+* Python (version 3.8)
+* optparse (R package)
+* data.table (R package)
+* reshape2 (R package)
+* plyr/dplyr/magrittr (R packages)
+* doMC (R package)
+* doParallel (R package)
+* foreach (R package)
+* withr (R package)
+* stringr (R package)
+* numpy/pandas (python packages)
+# Analyses
+* APA quantification
+  APA quantification from multiple samples was conducted by Dapars2. Please find the detailed document through this [linke](https://github.com/3UTR/DaPars2) or this [link](https://github.com/3UTR/3aQTL-pipe)
+* aOutlier calling
 # License
