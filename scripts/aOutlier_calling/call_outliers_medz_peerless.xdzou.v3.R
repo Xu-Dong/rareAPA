@@ -6,7 +6,7 @@ if (length(args) != 2) {
   quit(status=2)
 }
 
-dir = "/lustre/home/xdzou/2021-01-01-RareVar-aQTL-Project/2021-07-28-call-outliers-onlyEA/"# @needs to be modified
+dir = "/path/to/your workspace/"# @needs to be modified
 
 # Load libraries
 library(data.table)
