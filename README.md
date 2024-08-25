@@ -4,4 +4,8 @@
 ![system type](https://img.shields.io/badge/GNU-Linux-brightgreen)
 [![RareAPA-Zenodo](https://img.shields.io/badge/Zenodo-blue)](https://doi.org/10.5281/zenodo.10576656)
 
-# rareAPA
+[Impact of Rare Non-coding Variants on Human Diseases through Alternative Polyadenylation Outliers](https://www.researchsquare.com/article/rs-3907149/v1)
+
+# Overview
+# Setting up the environment
+# License
