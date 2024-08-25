@@ -9,7 +9,7 @@ main(){
 #	run_inds_extractor_covariate
 #	run_scaling
 #	run_gather_matrix
-#	run_call_outliers gtex_aOutlier_v8_normalized_pdui.peer..txt apa
+#	run_call_outliers Demo_data_for_aOutlier_calling.txt apa
 #	run_call_singlez_outliers apa
 
 }
