@@ -10,7 +10,7 @@ Although rare non-coding variants (RVs) play crucial roles in human complex trai
 
 # Overview
 
-This repository contains codes for data analyses in above rare APA manuscript. Most of the codes are built by R or Python (version Python3) or Shell and all request packages can be found within the codes. Scripts for specific analysis can be found in the Scripts directory.
+This repository contains codes for data analyses in above rare APA manuscript. Most of the codes are built by R or Python (version Python3) or Shell and all request packages can be found within the codes. Scripts for analyses, including aOutlier calling, rare variants enrichment, RNA Binding Protein (RBP) motif enrichment, colocalization with GWAS summary, and aWatershed, can be found in the [Scripts](https://github.com/Xu-Dong/rareAPA/tree/main/scripts) directory.
 
 # Setting up the environment
 # License
