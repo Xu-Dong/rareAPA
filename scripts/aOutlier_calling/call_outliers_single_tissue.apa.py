@@ -13,7 +13,7 @@
 import os
 
 dir = "/lustre/home/xdzou/2021-01-01-RareVar-aQTL-Project/2021-07-28-call-outliers-onlyEA"
-infile = dir + '/output/gtex_aOutlier_v8_normalized_pdui.peer.txt'
+infile = dir + '/output/Demo_data_for_aOutlier_calling.txt'
 outfile = dir + '/output/apa/aOutliers_singlez_picked.Z3.txt'
 #indivfile = dir + '/output/apa/apa_medz_1.picked_count_per_inds.txt' # @xdzou 2023-1-24
 noThreshPrefix = dir + '/output/apa/single_tissue_z1/aOutliers_singlez_nothreshold_'
