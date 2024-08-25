@@ -33,9 +33,11 @@ This repository contains codes for data analyses in above rare APA manuscript. M
   
 * aOutlier calling
 
-We analyzed single-tissue aOutliers and multi-tissue aOutliers (across at least five tissues). Two scripts in the [aOutlier calling]() directory 
+We analyzed single-tissue aOutliers and multi-tissue aOutliers (across at least five tissues). Two scripts, "call_outliers_medz_peerless.xdzou.v3.R" and "call_outliers_single_tissue.py" in the [aOutlier_calling](https://github.com/Xu-Dong/rareAPA/tree/main/scripts/aOutlier_calling) directory perform single-tissue and multi-tissue aOutliers, respectively. Both scripts require one data table containing the profile of normalized APA quantification across individuals and tissues, a demo data can be found in the [Demo]() directory.
 
-* 
+* Rare variants enrichment
+
+  Required inputs for RV enrichment analysis includes genotype file of GTEx individuals (obtained from dbGap with request application), variants annotations (VEP and CADD).
 # License
 
 This project is covered under the MIT License.
