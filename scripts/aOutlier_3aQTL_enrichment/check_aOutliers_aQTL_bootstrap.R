@@ -32,7 +32,7 @@ df_s %<>% filter(GENE %in% m_aoutlierG)
 
 # load aQTL profile
 
-df_aqtl <- fread("./input/aGene_profile.FDR_0.05.txt",header=T,sep="\t")
+df_aqtl <- readRDS("3aQTL_gene_list.RDS")
 
 curr_tissue <- opt$tissue
 aGene_list <- df_aqtl$gene[!is.na(df_aqtl[[curr_tissue]])]
