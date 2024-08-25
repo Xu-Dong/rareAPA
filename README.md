@@ -28,6 +28,14 @@ This repository contains codes for data analyses in above rare APA manuscript. M
 * numpy/pandas (python packages)
 # Analyses
 * APA quantification
+  
   APA quantification from multiple samples was conducted by Dapars2. Please find the detailed document through this [linke](https://github.com/3UTR/DaPars2) or this [link](https://github.com/3UTR/3aQTL-pipe)
+  
 * aOutlier calling
+
+We analyzed single-tissue aOutliers and multi-tissue aOutliers (across at least five tissues). Two scripts in the [aOutlier calling]() directory 
+
+* 
 # License
+
+This project is covered under the MIT License.
