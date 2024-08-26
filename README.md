@@ -25,7 +25,7 @@ This repository contains codes for data analyses in above rare APA manuscript. M
 * foreach (R package)
 * withr (R package)
 * stringr (R package)
-* numpy/pandas (python packages)
+* numpy/pandas (v1.23.3/v1.4.4;python packages)
 # Analyses
 * APA quantification
   
