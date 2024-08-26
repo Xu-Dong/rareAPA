@@ -16,16 +16,17 @@ This repository contains codes for data analyses in above rare APA manuscript. M
 
 * R (version > 3.6)
 * Python (version 3.8)
-* optparse (R package)
-* data.table (R package)
-* reshape2 (R package)
-* plyr/dplyr/magrittr (R packages)
-* doMC (R package)
-* doParallel (R package)
-* foreach (R package)
-* withr (R package)
-* stringr (R package)
-* numpy/pandas (v1.23.3/v1.4.4;python packages)
+* optparse_1.7.3 (R package)
+* data.table_1.14.8 (R package)
+* reshape2_1.4.4 (R package)
+* plyr_1.8.9/dplyr_1.1.3/magrittr_2.0.3 (R packages)
+* doMC_1.3.8 (R package)
+* doParallel_1.0.17 (R package)
+* foreach_1.5.2 (R package)
+* withr_2.5.1 (R package)
+* stringr_1.5.0 (R package)
+* qvalue_2.32.0 (R package)
+* numpy_1.23.3/pandas-1.4.4 (python packages)
 # Analyses
 * APA quantification
   
